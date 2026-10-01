@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TS Vault | Web Design & Development</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+pointer-events: none;
+opacity: 0.12;
+background-image:
+linear-gradient(rgba(0, 153, 255, 0.25) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 153, 255, 0.25) 1px, transparent 1px);
+background-size: 45px 45px;
+}
+
+.page {
+min-height: 100vh;
+position: relative;
+z-index: 1;
+}
+
+/* HEADER */
+
+header {
+width: 100%;
+padding: 20px 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+width: 175px;
+height: auto;
+display: block;
+}
+
+.header-buttons {
+display: flex;
+gap: 10px;
+}
+
+.nav-button {
+color: #8fcfff;
+text-decoration: none;
+font-size: 10px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+padding: 9px 13px;
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 20px;
+transition: 0.3s ease;
+}
+
+.nav-button:hover {
+color: white;
+border-color: #00aaff;
+background: rgba(0, 153, 255, 0.08);
+}
+
+/* MAIN */
+
+main {
+max-width: 950px;
+margin: auto;
+padding: 50px 25px 70px;
+}
+
+.section-label {
+text-align: center;
+color: #4ebcff;
+font-size: 11px;
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+h1 {
+text-align: center;
+font-size: clamp(38px, 8vw, 65px);
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 20px;
+text-shadow: 0 0 25px rgba(0, 153, 255, 0.3);
+}
+
+.intro {
+max-width: 700px;
+margin: 0 auto 45px;
+text-align: center;
+color: #aebdce;
+font-size: 15px;
+line-height: 1.8;
+}
+
+/* CONTENT */
+
+.content-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 22px;
+}
+
+.info-card {
+padding: 30px;
+background: rgba(5, 17, 31, 0.85);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 14px;
+}
+
+.info-card.full {
+grid-column: 1 / -1;
+}
+
+.info-card h2 {
+color: #5fc6ff;
+font-size: 16px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.info-card p {
+color: #aebdce;
+font-size: 13px;
+line-height: 1.8;
+}
+
+.info-card ul {
+list-style: none;
+margin-top: 5px;
+}
+
+.info-card li {
+color: #aebdce;
+font-size: 13px;
+line-height: 1.8;
+margin-bottom: 8px;
+padding-left: 18px;
+position: relative;
+}
+
+.info-card li::before {
+content: "•";
+position: absolute;
+left: 0;
+color: #4ebcff;
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+margin-top: 40px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 14px;
+}
+
+.action-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+padding: 14px 24px;
+min-width: 190px;
+
+border-radius: 25px;
+border: 1px solid rgba(0, 153, 255, 0.35);
+
+background: rgba(5, 17, 31, 0.85);
+
+color: #b9dfff;
+text-decoration: none;
+
+font-size: 10px;
+font-weight: bold;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+
+transition: 0.3s ease;
+}
+
+.action-button:hover {
+color: white;
+border-color: #00aaff;
+background: rgba(0, 130, 255, 0.12);
+transform: translateY(-3px);
+}
+
+.action-button.primary {
+background: rgba(0, 130, 255, 0.12);
+border-color: #008cff;
+color: #70caff;
+}
+
+.action-button.primary:hover {
+background: rgba(0, 130, 255, 0.22);
+}
+
+/* FOOTER */
+
+footer {
+padding: 20px;
+text-align: center;
+color: #536579;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+header {
+padding: 18px 20px;
+align-items: flex-start;
+}
+
+.logo {
+width: 140px;
+}
+
+.header-buttons {
+flex-direction: column;
+align-items: flex-end;
+gap: 6px;
+}
+
+.nav-button {
+font-size: 8px;
+padding: 8px 10px;
+}
+
+main {
+padding: 40px 20px 55px;
+}
+
+.content-grid {
+grid-template-columns: 1fr;
+}
+
+.info-card.full {
+grid-column: auto;
+}
+
+.info-card {
+padding: 25px;
+}
+
+h1 {
+letter-spacing: 3px;
+}
+
+.intro {
+font-size: 14px;
+}
+
+.action-button {
+width: 100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+
+<header>
+
+<a href="vault.html">
+<img src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo">
+</a>
+
+<div class="header-buttons">
+
+<a href="services.html" class="nav-button">
+← Services
+</a>
+
+<a href="vault.html" class="nav-button">
+⌂ Vault
+</a>
+
+</div>
+
+</header>
+
+<!-- MAIN -->
+
+<main>
+
+<div class="section-label">
+TS VAULT · DIGITAL SOLUTIONS
+</div>
+
+<h1>
+Web Design & Development
+</h1>
+
+<p class="intro">
+A website is often the first place people interact with
+a business online. We create modern, responsive websites
+designed to give businesses a professional and effective
+digital presence.
+</p>
+
+<div class="content-grid">
+
+<!-- WHAT IS WEB DESIGN -->
+
+<div class="info-card full">
+
+<h2>
+What Is Web Design & Development?
+</h2>
+
+<p>
+Web design focuses on how a website looks, feels
+and works for its visitors. Web development turns
+that design into a functional website that can be
+accessed across different devices.
+</p>
+
+<br>
+
+<p>
+At TS Vault, our approach is focused on creating
+clean, practical websites that represent a brand
+professionally while making information easy for
+visitors to find.
+</p>
+
+</div>
+
+<!-- WHY IT MATTERS -->
+
+<div class="info-card">
+
+<h2>
+Why It Matters
+</h2>
+
+<ul>
+<li>Create a professional online presence.</li>
+<li>Give customers easy access to information.</li>
+<li>Build trust in your digital brand.</li>
+<li>Make your business accessible online.</li>
+<li>Present your services clearly.</li>
+</ul>
+
+</div>
+
+<!-- OUR FOCUS -->
+
+<div class="info-card">
+
+<h2>
+Our Focus
+</h2>
+
+<ul>
+<li>Responsive website design.</li>
+<li>Clean and modern layouts.</li>
+<li>Mobile-friendly experiences.</li>
+<li>Business and service websites.</li>
+<li>Practical website functionality.</li>
+</ul>
+
+</div>
+
+<!-- WHO IT IS FOR -->
+
+<div class="info-card full">
+
+<h2>
+Who Can Benefit?
+</h2>
+
+<p>
+Our web design and development service can benefit
+small businesses, entrepreneurs, organisations,
+professionals and anyone looking to establish a
+stronger presence on the web.
+</p>
+
+</div>
+
+</div>
+
+<!-- ACTION BUTTONS -->
+
+<div class="actions">
+
+<a href="webprice.html" class="action-button">
+View Pricing
+</a>
+
+<a href="contact.html" class="action-button primary">
+Get Started
+</a>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</div>
+
+</body>
+</html>

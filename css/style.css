@@ -1,0 +1,111 @@
+body {
+background-color: #0a0f1a;
+color: #ffffff;
+font-family: Arial, sans-serif;
+text-align: center;
+padding-top: 100px;
+}
+
+h1 {
+font-size: 48px;
+margin-bottom: 10px;
+}
+
+p {
+font-size: 20px;
+color: #8ab4f8;
+}
+
+nav{
+margin-bottom: 60px;
+}
+nav a{
+color:#8ab4f8
+text-decoration:none;
+margin:0 20px;
+font-size18px
+}
+nav a:hover{
+color#ffffff
+}
+.vault-button{
+backgroung-color:transparent;
+color:#8ab4f8;
+border:2px solid #8ab4f8;
+padding:12px 28px;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px
+}
+.vault-button:hover{
+background-color:#8ab4f8;
+color:#0a0f1a;
+}
+#vault{
+margin-top:180px;
+padding:80px 20px;
+border-top:1px solid #8ab4f8
+}
+#vault h2{
+font-size:36px;
+margin-button:15px;
+}
+#vault p{
+font-size18px;
+}
+.vault-page{
+margin-top:80px;
+padding:40px 20px;
+}
+.vault-page h1{
+font-size:42px;
+letter-spacing:4px
+}
+.vault-panel{
+max-width:500px;
+margin:60px auto;
+padding:40px
+border:1px solid #8ab4f8;
+border-radius:10px;
+background-color:#101827;
+}
+.vault-panel h2{
+letter-spacing:3px;
+}
+.vault-panel button{
+background-color:#8ab4f8;
+color:#0a0f1a;
+border:none;
+padding:12px 25px;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+.vault-panel button:hover{
+background-color:#ffffff;
+}
+.site-logo{
+width:90px;
+height:90px;
+object-fit:middle;
+margin-right:20px;
+nav{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:40px;
+padding:20px;
+}
+nav a{
+color:#8ab4f8;
+text-decoration:none;
+font_size:16px;
+font-weight:bold;
+transition:0.3s;
+}
+nav a:hover{
+color:#ffffff
+}
+.site-logo{
+width:70px;

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TS Vault | Services</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+pointer-events: none;
+opacity: 0.12;
+background-image:
+linear-gradient(rgba(0, 153, 255, 0.25) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 153, 255, 0.25) 1px, transparent 1px);
+background-size: 45px 45px;
+}
+
+.page {
+min-height: 100vh;
+position: relative;
+z-index: 1;
+}
+
+/* HEADER */
+
+header {
+width: 100%;
+padding: 20px 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+width: 175px;
+height: auto;
+display: block;
+}
+
+.back-button {
+color: #8fcfff;
+text-decoration: none;
+font-size: 11px;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 10px 16px;
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 20px;
+transition: 0.3s ease;
+}
+
+.back-button:hover {
+color: white;
+border-color: #00aaff;
+background: rgba(0, 153, 255, 0.08);
+}
+
+/* MAIN */
+
+main {
+max-width: 1050px;
+margin: auto;
+padding: 50px 25px 70px;
+text-align: center;
+}
+
+.section-label {
+color: #4ebcff;
+font-size: 11px;
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+h1 {
+font-size: clamp(40px, 8vw, 65px);
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 18px;
+text-shadow: 0 0 25px rgba(0, 153, 255, 0.3);
+}
+
+.intro {
+max-width: 650px;
+margin: 0 auto 45px;
+color: #aebdce;
+font-size: 15px;
+line-height: 1.7;
+}
+
+/* SERVICES */
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 22px;
+max-width: 1000px;
+margin: auto;
+}
+
+.service-button {
+min-height: 210px;
+padding: 30px 20px;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+text-decoration: none;
+color: white;
+
+background: rgba(5, 17, 31, 0.85);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 14px;
+
+transition: all 0.3s ease;
+}
+
+.service-button:hover {
+transform: translateY(-6px);
+border-color: #00aaff;
+background: rgba(7, 27, 48, 0.95);
+box-shadow: 0 10px 35px rgba(0, 136, 255, 0.15);
+}
+
+.icon {
+width: 58px;
+height: 58px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin-bottom: 18px;
+
+border-radius: 50%;
+border: 1px solid rgba(0, 170, 255, 0.45);
+
+background: rgba(0, 130, 255, 0.07);
+
+color: #5fc6ff;
+font-size: 23px;
+}
+
+.service-button h2 {
+font-size: 16px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+margin-bottom: 10px;
+}
+
+.service-button p {
+color: #8294a8;
+font-size: 12px;
+line-height: 1.5;
+}
+
+.read-more {
+margin-top: 15px;
+color: #4ebcff;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+/* FOOTER */
+
+footer {
+padding: 20px;
+text-align: center;
+color: #536579;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+header {
+padding: 18px 20px;
+}
+
+.logo {
+width: 140px;
+}
+
+.back-button {
+font-size: 9px;
+padding: 9px 12px;
+}
+
+main {
+padding: 40px 20px 55px;
+}
+
+.services-grid {
+grid-template-columns: 1fr;
+max-width: 500px;
+}
+
+.service-button {
+min-height: 175px;
+}
+
+h1 {
+letter-spacing: 3px;
+}
+
+.intro {
+font-size: 14px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+
+<header>
+
+<a href="vault.html">
+<img src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo">
+</a>
+
+<a href="vault.html" class="back-button">
+← Back to Vault
+</a>
+
+</header>
+
+<!-- MAIN -->
+
+<main>
+
+<div class="section-label">
+TS VAULT
+</div>
+
+<h1>
+Our Services
+</h1>
+
+<p class="intro">
+Explore the digital services provided by TS Vault.
+Select a service below to learn more.
+</p>
+
+<!-- SERVICE BUTTONS -->
+
+<div class="services-grid">
+
+<!-- CYBERSECURITY -->
+
+<a href="cybersecurity.html" class="service-button">
+
+<div class="icon">
+🔐
+</div>
+
+<h2>
+Cybersecurity
+</h2>
+
+<p>
+Digital security solutions designed to help
+protect systems, information and online assets.
+</p>
+
+<span class="read-more">
+Read More →
+</span>
+
+</a>
+
+<!-- WEB DESIGN -->
+
+<a href="webdesign.html" class="service-button">
+
+<div class="icon">
+◇
+</div>
+
+<h2>
+Web Design & Development
+</h2>
+
+<p>
+Modern websites designed and developed to give
+businesses a professional digital presence.
+</p>
+
+<span class="read-more">
+Read More →
+</span>
+
+</a>
+
+<!-- DIGITAL MARKETING -->
+
+<a href="digitalmarketing.html" class="service-button">
+
+<div class="icon">
+◉
+</div>
+
+<h2>
+Digital Marketing
+</h2>
+
+<p>
+Digital strategies that help businesses build
+their presence and connect with their audience.
+</p>
+
+<span class="read-more">
+Read More →
+</span>
+
+</a>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</div>
+
+</body>
+</html>

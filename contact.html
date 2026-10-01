@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact TS Vault | Digital Security & Solutions</title>
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+color: #ffffff;
+min-height: 100vh;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+position: relative;
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(0, 140, 255, 0.035) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 140, 255, 0.035) 1px, transparent 1px);
+background-size: 45px 45px;
+pointer-events: none;
+}
+
+header {
+width: 100%;
+padding: 22px 6%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+z-index: 2;
+}
+
+.logo {
+width: 145px;
+height: auto;
+display: block;
+}
+
+.nav-buttons {
+display: flex;
+gap: 10px;
+}
+
+.nav-buttons a,
+.btn {
+text-decoration: none;
+color: #d9efff;
+border: 1px solid rgba(0, 153, 255, 0.5);
+padding: 10px 16px;
+border-radius: 22px;
+font-size: 13px;
+transition: 0.3s ease;
+display: inline-block;
+text-align: center;
+}
+
+.nav-buttons a:hover,
+.btn:hover {
+background: rgba(0, 140, 255, 0.18);
+border-color: #0099ff;
+}
+
+main {
+width: 90%;
+max-width: 900px;
+margin: 35px auto 60px;
+position: relative;
+z-index: 1;
+}
+
+.intro {
+text-align: center;
+margin-bottom: 35px;
+}
+
+.intro h1 {
+font-size: 36px;
+margin-bottom: 12px;
+letter-spacing: 1px;
+}
+
+.intro h1 span {
+color: #00aaff;
+}
+
+.intro p {
+color: #a9bdd0;
+font-size: 15px;
+line-height: 1.7;
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+margin-bottom: 35px;
+}
+
+.contact-card {
+background: rgba(5, 17, 31, 0.88);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 16px;
+padding: 25px 18px;
+text-align: center;
+transition: 0.3s ease;
+}
+
+.contact-card:hover {
+border-color: rgba(0, 170, 255, 0.65);
+transform: translateY(-3px);
+}
+
+.contact-icon {
+font-size: 30px;
+margin-bottom: 14px;
+}
+
+.contact-card h2 {
+font-size: 19px;
+margin-bottom: 10px;
+}
+
+.contact-card p {
+color: #a9bdd0;
+font-size: 13px;
+line-height: 1.6;
+margin-bottom: 18px;
+overflow-wrap: anywhere;
+}
+
+.contact-card .btn {
+width: 100%;
+max-width: 190px;
+}
+
+.feedback-card {
+background: rgba(5, 17, 31, 0.9);
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 16px;
+padding: 30px;
+}
+
+.feedback-heading {
+text-align: center;
+margin-bottom: 25px;
+}
+
+.feedback-heading h2 {
+font-size: 25px;
+margin-bottom: 10px;
+}
+
+.feedback-heading h2 span {
+color: #00aaff;
+}
+
+.feedback-heading p {
+color: #a9bdd0;
+font-size: 14px;
+line-height: 1.6;
+}
+
+.form-group {
+margin-bottom: 18px;
+}
+
+.form-group label {
+display: block;
+color: #d9efff;
+font-size: 14px;
+margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: 13px 14px;
+border-radius: 9px;
+border: 1px solid rgba(0, 153, 255, 0.3);
+background: rgba(2, 8, 16, 0.85);
+color: #ffffff;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+outline: none;
+transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: #00aaff;
+box-shadow: 0 0 0 2px rgba(0, 170, 255, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+color: #71889d;
+}
+
+.form-group select {
+color: #d9efff;
+}
+
+.form-group select option {
+background: #081525;
+color: #ffffff;
+}
+
+.form-group textarea {
+min-height: 130px;
+resize: vertical;
+}
+
+.submit-btn {
+width: 100%;
+border: 1px solid #0099ff;
+background: rgba(0, 130, 255, 0.15);
+color: #ffffff;
+padding: 14px 20px;
+border-radius: 24px;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+background: #0099ff;
+color: #02060b;
+}
+
+.form-note {
+color: #8299ad;
+font-size: 12px;
+line-height: 1.6;
+text-align: center;
+margin-top: 14px;
+}
+
+.bottom-links {
+display: flex;
+justify-content: center;
+gap: 12px;
+flex-wrap: wrap;
+margin-top: 30px;
+}
+
+footer {
+text-align: center;
+color: #6f879b;
+font-size: 12px;
+padding: 25px 10px;
+position: relative;
+z-index: 1;
+}
+
+@media (max-width: 700px) {
+header {
+padding: 18px 5%;
+}
+
+.logo {
+width: 120px;
+}
+
+.nav-buttons {
+gap: 6px;
+}
+
+.nav-buttons a {
+padding: 8px 10px;
+font-size: 12px;
+}
+
+main {
+width: 92%;
+margin-top: 25px;
+}
+
+.intro h1 {
+font-size: 29px;
+}
+
+.contact-grid {
+grid-template-columns: 1fr;
+gap: 14px;
+}
+
+.contact-card {
+padding: 23px 20px;
+}
+
+.feedback-card {
+padding: 22px 18px;
+}
+
+.feedback-heading h2 {
+font-size: 22px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="vault.html">
+<img src="assets/ts-vault-logo.png" alt="TS Vault Logo" class="logo">
+</a>
+
+<div class="nav-buttons">
+<a href="services.html">← Services</a>
+<a href="vault.html">⌂ Vault</a>
+</div>
+</header>
+
+<main>
+
+<section class="intro">
+<h1>Contact <span>TS Vault</span></h1>
+<p>
+Have a question, need a service, or want to discuss a project?
+Reach out through your preferred contact method.
+</p>
+</section>
+
+<section class="contact-grid">
+
+<!-- WHATSAPP -->
+<div class="contact-card">
+<div class="contact-icon">💬</div>
+<h2>WhatsApp</h2>
+<p>
+Chat with TS Vault directly for enquiries,
+service information, and project discussions.
+</p>
+<a
+href="https://wa.me/27670984981"
+class="btn"
+target="_blank"
+rel="noopener noreferrer">
+Message on WhatsApp
+</a>
+</div>
+
+<!-- EMAIL -->
+<div class="contact-card">
+<div class="contact-icon">✉️</div>
+<h2>Email</h2>
+<p>
+Send us a detailed enquiry or project request
+through your Gmail account.
+</p>
+<a
+href="https://mail.google.com/mail/?view=cm&fs=1&to=tsvault0%40gmail.com"
+class="btn"
+target="_blank"
+rel="noopener noreferrer">
+Email TS Vault
+</a>
+</div>
+
+<!-- PHONE -->
+<div class="contact-card">
+<div class="contact-icon">📞</div>
+<h2>Call Us</h2>
+<p>
+Prefer speaking directly?
+Give TS Vault a call.
+</p>
+<a href="tel:+27670984981" class="btn">
+Call 067 098 4981
+</a>
+</div>
+
+</section>
+
+<!-- FEEDBACK FORM -->
+<section class="feedback-card">
+
+<div class="feedback-heading">
+<h2>Client <span>Feedback</span></h2>
+<p>
+Your feedback helps TS Vault improve its services.
+Tell us about your experience.
+</p>
+</div>
+
+<form
+action="https://formsubmit.co/tsvault0@gmail.com"
+method="POST">
+
+<input
+type="hidden"
+name="_subject"
+value="New TS Vault Client Feedback">
+
+<input
+type="hidden"
+name="_template"
+value="table">
+
+<!-- Spam prevention honeypot -->
+<input
+type="text"
+name="_honey"
+style="display:none"
+tabindex="-1"
+autocomplete="off">
+
+<div class="form-group">
+<label for="client-name">Your Name</label>
+<input
+type="text"
+id="client-name"
+name="Client Name"
+placeholder="Enter your name"
+maxlength="100"
+required>
+</div>
+
+<div class="form-group">
+<label for="client-email">Email Address</label>
+<input
+type="email"
+id="client-email"
+name="email"
+placeholder="you@example.com"
+maxlength="150"
+required>
+</div>
+
+<div class="form-group">
+<label for="service-used">Which service did you use?</label>
+<select id="service-used" name="Service Used" required>
+<option value="" disabled selected>Select a service</option>
+<option value="Cybersecurity">Cybersecurity</option>
+<option value="Web Design and Development">Web Design & Development</option>
+<option value="Digital Marketing">Digital Marketing</option>
+<option value="Other">Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="client-rating">How would you rate your experience?</label>
+<select id="client-rating" name="Client Rating" required>
+<option value="" disabled selected>Select a rating</option>
+<option value="5 - Excellent">★★★★★ — Excellent</option>
+<option value="4 - Very Good">★★★★☆ — Very Good</option>
+<option value="3 - Good">★★★☆☆ — Good</option>
+<option value="2 - Fair">★★☆☆☆ — Fair</option>
+<option value="1 - Needs Improvement">★☆☆☆☆ — Needs Improvement</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="feedback-message">Your Feedback</label>
+<textarea
+id="feedback-message"
+name="Feedback Message"
+placeholder="Tell us about your experience..."
+maxlength="3000"
+required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+Submit Feedback
+</button>
+
+<p class="form-note">
+Your feedback will be sent to TS Vault for review.
+Please do not include passwords or other sensitive information.
+</p>
+
+</form>
+
+</section>
+
+<div class="bottom-links">
+<a href="services.html" class="btn">← Back to Services</a>
+<a href="vault.html" class="btn">⌂ Return to Vault</a>
+</div>
+
+</main>
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</body>
+</html>

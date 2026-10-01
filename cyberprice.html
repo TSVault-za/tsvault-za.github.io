@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cybersecurity Pricing | TS Vault</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+min-height: 100vh;
+color: #ffffff;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+position: relative;
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(0, 140, 255, 0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 140, 255, 0.05) 1px, transparent 1px);
+background-size: 45px 45px;
+pointer-events: none;
+z-index: -1;
+}
+
+header {
+width: 100%;
+padding: 20px 6%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+}
+
+.logo {
+width: 145px;
+height: auto;
+display: block;
+}
+
+.header-buttons {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+justify-content: flex-end;
+}
+
+.nav-btn {
+text-decoration: none;
+color: #70c7ff;
+border: 1px solid rgba(0, 153, 255, 0.4);
+padding: 9px 15px;
+border-radius: 20px;
+font-size: 13px;
+transition: 0.25s ease;
+background: rgba(3, 12, 23, 0.65);
+}
+
+.nav-btn:hover {
+background: rgba(0, 140, 255, 0.15);
+border-color: #149cff;
+color: #ffffff;
+}
+
+main {
+width: 90%;
+max-width: 900px;
+margin: 35px auto 60px;
+text-align: center;
+}
+
+.status {
+display: inline-block;
+color: #62c4ff;
+border: 1px solid rgba(0, 153, 255, 0.35);
+background: rgba(0, 110, 200, 0.08);
+padding: 7px 14px;
+border-radius: 20px;
+font-size: 12px;
+letter-spacing: 1px;
+margin-bottom: 18px;
+}
+
+h1 {
+font-size: clamp(30px, 6vw, 52px);
+letter-spacing: 2px;
+margin-bottom: 12px;
+}
+
+.intro {
+max-width: 650px;
+margin: 0 auto 35px;
+color: #aebdcc;
+line-height: 1.7;
+font-size: 15px;
+}
+
+.pricing-card {
+max-width: 600px;
+margin: 0 auto;
+padding: 35px 25px;
+background: rgba(5, 17, 31, 0.88);
+border: 1px solid rgba(0, 153, 255, 0.35);
+border-radius: 16px;
+box-shadow: 0 15px 40px rgba(0, 80, 180, 0.08);
+}
+
+.pricing-card h2 {
+font-size: 24px;
+margin-bottom: 8px;
+}
+
+.price {
+font-size: 42px;
+font-weight: bold;
+color: #65c5ff;
+margin: 10px 0 5px;
+}
+
+.once-off {
+color: #71869a;
+font-size: 13px;
+margin-bottom: 28px;
+}
+
+.features {
+list-style: none;
+text-align: left;
+max-width: 430px;
+margin: 0 auto 30px;
+}
+
+.features li {
+color: #c1ceda;
+font-size: 14px;
+line-height: 1.6;
+padding: 10px 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.features li::before {
+content: "✓";
+color: #36adff;
+font-weight: bold;
+margin-right: 10px;
+}
+
+.notice {
+color: #8295a7;
+font-size: 12px;
+line-height: 1.6;
+max-width: 500px;
+margin: 0 auto 25px;
+}
+
+.action-btn {
+display: inline-block;
+text-decoration: none;
+color: #ffffff;
+background: #087fd1;
+border: 1px solid #149cff;
+padding: 12px 26px;
+border-radius: 25px;
+font-size: 14px;
+font-weight: bold;
+transition: 0.25s ease;
+}
+
+.action-btn:hover {
+background: #149cff;
+transform: translateY(-2px);
+}
+
+.bottom-nav {
+margin-top: 30px;
+display: flex;
+justify-content: center;
+gap: 12px;
+flex-wrap: wrap;
+}
+
+footer {
+text-align: center;
+color: #607487;
+font-size: 12px;
+padding: 20px;
+}
+
+@media (max-width: 700px) {
+
+header {
+padding: 18px 5%;
+align-items: flex-start;
+}
+
+.logo {
+width: 125px;
+}
+
+.header-buttons {
+gap: 7px;
+}
+
+.nav-btn {
+padding: 8px 11px;
+font-size: 11px;
+}
+
+main {
+margin-top: 25px;
+}
+
+.pricing-card {
+padding: 28px 18px;
+}
+
+.price {
+font-size: 36px;
+}
+}
+
+@media (max-width: 450px) {
+
+header {
+flex-direction: column;
+align-items: center;
+}
+
+.header-buttons {
+justify-content: center;
+}
+
+h1 {
+font-size: 32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<!-- TS Vault Logo -->
+<a href="vault.html">
+<img
+src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo"
+>
+</a>
+
+<div class="header-buttons">
+<a href="services.html" class="nav-btn">← Services</a>
+<a href="vault.html" class="nav-btn">⌂ Vault</a>
+</div>
+
+</header>
+
+<main>
+
+<div class="status">
+CYBERSECURITY
+</div>
+
+<h1>SECURITY ASSESSMENT</h1>
+
+<p class="intro">
+A practical security assessment designed to identify
+common weaknesses and provide clear recommendations
+to help strengthen your digital presence.
+</p>
+
+<div class="pricing-card">
+
+<h2>TS VAULT SECURITY ASSESSMENT</h2>
+
+<div class="price">
+R500
+</div>
+
+<div class="once-off">
+Once-off payment
+</div>
+
+<ul class="features">
+
+<li>
+Basic website security assessment
+</li>
+
+<li>
+Check for common security weaknesses
+</li>
+
+<li>
+HTTPS and security configuration review
+</li>
+
+<li>
+Basic account and password security guidance
+</li>
+
+<li>
+Review of obvious website configuration issues
+</li>
+
+<li>
+Practical security recommendations
+</li>
+
+<li>
+Short security assessment report
+</li>
+
+<li>
+Follow-up discussion with the client
+</li>
+
+</ul>
+
+<p class="notice">
+All security assessments are performed only with
+the client's authorization. TS Vault does not
+guarantee complete protection against every
+possible security threat.
+</p>
+
+<a href="contact.html" class="action-btn">
+Get Started
+</a>
+
+</div>
+
+<div class="bottom-nav">
+
+<a href="services.html" class="nav-btn">
+← Back to Services
+</a>
+
+<a href="vault.html" class="nav-btn">
+⌂ Return to Vault
+</a>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TS Vault | About</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+pointer-events: none;
+opacity: 0.12;
+background-image:
+linear-gradient(rgba(0, 153, 255, 0.25) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 153, 255, 0.25) 1px, transparent 1px);
+background-size: 45px 45px;
+}
+
+.page {
+min-height: 100vh;
+position: relative;
+z-index: 1;
+}
+
+/* HEADER */
+
+header {
+width: 100%;
+padding: 20px 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+width: 175px;
+height: auto;
+display: block;
+}
+
+.back-button {
+color: #8fcfff;
+text-decoration: none;
+font-size: 11px;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 10px 16px;
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 20px;
+transition: 0.3s ease;
+}
+
+.back-button:hover {
+color: white;
+border-color: #00aaff;
+background: rgba(0, 153, 255, 0.08);
+}
+
+/* MAIN */
+
+main {
+max-width: 900px;
+margin: auto;
+padding: 50px 25px 70px;
+}
+
+.section-label {
+text-align: center;
+color: #4ebcff;
+font-size: 11px;
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+h1 {
+text-align: center;
+font-size: clamp(40px, 8vw, 65px);
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 20px;
+text-shadow: 0 0 25px rgba(0, 153, 255, 0.3);
+}
+
+.intro {
+max-width: 680px;
+margin: 0 auto 45px;
+text-align: center;
+color: #aebdce;
+font-size: 15px;
+line-height: 1.7;
+}
+
+/* CONTENT */
+
+.about-content {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 22px;
+}
+
+.about-card {
+padding: 30px;
+background: rgba(5, 17, 31, 0.85);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 14px;
+}
+
+.about-card.full {
+grid-column: 1 / -1;
+}
+
+.about-card h2 {
+color: #5fc6ff;
+font-size: 16px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.about-card p {
+color: #aebdce;
+font-size: 13px;
+line-height: 1.8;
+}
+
+/* FOUNDER */
+
+.founder {
+margin-top: 22px;
+padding: 30px;
+text-align: center;
+background: rgba(5, 17, 31, 0.85);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 14px;
+}
+
+.founder h2 {
+color: #5fc6ff;
+font-size: 16px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.founder-name {
+font-size: 24px;
+letter-spacing: 2px;
+margin-bottom: 12px;
+}
+
+.founder p {
+max-width: 650px;
+margin: auto;
+color: #aebdce;
+font-size: 13px;
+line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+padding: 20px;
+text-align: center;
+color: #536579;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+header {
+padding: 18px 20px;
+}
+
+.logo {
+width: 140px;
+}
+
+.back-button {
+font-size: 9px;
+padding: 9px 12px;
+}
+
+main {
+padding: 40px 20px 55px;
+}
+
+.about-content {
+grid-template-columns: 1fr;
+}
+
+.about-card.full {
+grid-column: auto;
+}
+
+.about-card {
+padding: 25px;
+}
+
+h1 {
+letter-spacing: 3px;
+}
+
+.intro {
+font-size: 14px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+
+<header>
+
+<a href="vault.html">
+<img src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo">
+</a>
+
+<a href="vault.html" class="back-button">
+← Back to Vault
+</a>
+
+</header>
+
+<!-- MAIN -->
+
+<main>
+
+<div class="section-label">
+TS VAULT
+</div>
+
+<h1>
+About TS Vault
+</h1>
+
+<p class="intro">
+TS Vault is a digital security and solutions brand focused on
+helping individuals and businesses build a stronger presence
+in the digital world.
+</p>
+
+<!-- ABOUT CONTENT -->
+
+<div class="about-content">
+
+<div class="about-card">
+
+<h2>
+Our Mission
+</h2>
+
+<p>
+Our mission is to provide practical digital solutions
+that help businesses and individuals navigate the
+modern digital environment with greater confidence,
+security and professionalism.
+</p>
+
+</div>
+
+<div class="about-card">
+
+<h2>
+Our Vision
+</h2>
+
+<p>
+TS Vault aims to grow into a trusted digital solutions
+brand, creating accessible technology services while
+continuing to learn, innovate and adapt to an evolving
+digital landscape.
+</p>
+
+</div>
+
+<div class="about-card full">
+
+<h2>
+What We Do
+</h2>
+
+<p>
+TS Vault brings together digital security, web design
+and development, and digital marketing under one
+platform. Each service is designed with the goal of
+helping clients establish, improve and protect their
+digital presence.
+</p>
+
+</div>
+
+</div>
+
+<!-- FOUNDER -->
+
+<div class="founder">
+
+<h2>
+Behind TS Vault
+</h2>
+
+<div class="founder-name">
+Thato Seilamashi
+</div>
+
+<p>
+TS Vault was founded by Thato Seilamashi with a vision of
+building a digital solutions brand from the ground up.
+The journey is centred around learning, creativity,
+technology and creating solutions that can make a real
+difference for clients.
+</p>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</div>
+
+</body>
+</html>

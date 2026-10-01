@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TS Vault | Secure The Digital Frontier</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: #ffffff;
+background:
+radial-gradient(
+circle at 50% 35%,
+rgba(0, 132, 255, 0.16),
+transparent 35%
+),
+radial-gradient(
+circle at 50% 100%,
+rgba(0, 72, 150, 0.12),
+transparent 40%
+),
+#02060b;
+
+display: flex;
+flex-direction: column;
+overflow-x: hidden;
+}
+
+/* =========================
+BACKGROUND
+========================== */
+
+.background {
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 0;
+}
+
+.glow {
+position: absolute;
+width: 420px;
+height: 420px;
+border-radius: 50%;
+background: rgba(0, 132, 255, 0.07);
+filter: blur(100px);
+}
+
+.glow.one {
+top: -180px;
+left: -180px;
+}
+
+.glow.two {
+bottom: -200px;
+right: -180px;
+}
+
+/* =========================
+HEADER
+========================== */
+
+header {
+position: relative;
+z-index: 5;
+
+width: 100%;
+padding: 25px 5%;
+
+display: flex;
+align-items: center;
+}
+
+.logo {
+width: 155px;
+height: auto;
+
+filter:
+drop-shadow(0 0 8px rgba(0, 140, 255, 0.30));
+
+transition: 0.3s ease;
+}
+
+.logo:hover {
+transform: translateY(-2px);
+
+filter:
+drop-shadow(0 0 15px rgba(0, 140, 255, 0.45));
+}
+
+/* =========================
+HERO
+========================== */
+
+main {
+position: relative;
+z-index: 2;
+
+flex: 1;
+
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 40px 25px 70px;
+}
+
+.hero {
+width: 100%;
+max-width: 900px;
+text-align: center;
+
+animation: entrance 1s ease forwards;
+}
+
+.hero h1 {
+font-size: clamp(48px, 9vw, 92px);
+font-weight: 700;
+letter-spacing: 5px;
+line-height: 1;
+
+margin-bottom: 22px;
+
+background:
+linear-gradient(
+120deg,
+#ffffff 10%,
+#aeb8c3 45%,
+#ffffff 70%,
+#8fcfff
+);
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+text-shadow:
+0 0 35px rgba(0, 140, 255, 0.10);
+}
+
+.tagline {
+font-size: clamp(14px, 2vw, 18px);
+letter-spacing: 4px;
+color: #76c8ff;
+text-transform: uppercase;
+
+margin-bottom: 25px;
+}
+
+.description {
+max-width: 650px;
+margin: 0 auto;
+
+color: #8e9eae;
+
+font-size: 15px;
+line-height: 1.8;
+}
+
+/* =========================
+BUTTONS
+========================== */
+
+.buttons {
+margin-top: 42px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 18px;
+
+flex-wrap: wrap;
+}
+
+.button {
+min-width: 190px;
+
+padding: 15px 25px;
+
+text-decoration: none;
+text-align: center;
+
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 1.5px;
+
+border-radius: 8px;
+
+transition:
+transform 0.3s ease,
+box-shadow 0.3s ease,
+background 0.3s ease,
+border-color 0.3s ease;
+}
+
+/* =========================
+ENTER THE VAULT
+========================== */
+
+.vault-button {
+color: #ffffff;
+
+border: 1px solid #0099ff;
+
+background:
+linear-gradient(
+135deg,
+rgba(0, 130, 220, 0.35),
+rgba(0, 60, 120, 0.18)
+);
+
+box-shadow:
+0 0 20px rgba(0, 140, 255, 0.12);
+}
+
+.vault-button:hover {
+transform: translateY(-4px);
+
+background:
+linear-gradient(
+135deg,
+rgba(0, 145, 240, 0.50),
+rgba(0, 75, 145, 0.30)
+);
+
+box-shadow:
+0 0 30px rgba(0, 140, 255, 0.30);
+}
+
+/* =========================
+ABOUT TS VAULT
+========================== */
+
+.about-button {
+color: #cbd5df;
+
+border: 1px solid rgba(180, 200, 220, 0.25);
+
+background:
+rgba(255, 255, 255, 0.025);
+}
+
+.about-button:hover {
+transform: translateY(-4px);
+
+color: #ffffff;
+
+border-color: rgba(0, 153, 255, 0.55);
+
+background:
+rgba(0, 120, 210, 0.08);
+
+box-shadow:
+0 0 22px rgba(0, 140, 255, 0.12);
+}
+
+/* =========================
+FOOTER
+========================== */
+
+footer {
+position: relative;
+z-index: 2;
+
+width: 100%;
+
+padding: 20px;
+
+text-align: center;
+
+border-top:
+1px solid rgba(255, 255, 255, 0.05);
+
+color: #4f6070;
+
+font-size: 10px;
+letter-spacing: 1.5px;
+}
+
+/* =========================
+ANIMATION
+========================== */
+
+@keyframes entrance {
+
+from {
+opacity: 0;
+transform: translateY(25px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+
+}
+
+/* =========================
+MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+header {
+padding: 20px 5%;
+}
+
+.logo {
+width: 125px;
+}
+
+main {
+padding-top: 25px;
+padding-bottom: 50px;
+}
+
+.hero h1 {
+letter-spacing: 3px;
+}
+
+.tagline {
+font-size: 11px;
+letter-spacing: 2.5px;
+}
+
+.description {
+font-size: 14px;
+}
+
+.buttons {
+flex-direction: column;
+width: 100%;
+}
+
+.button {
+width: 100%;
+max-width: 280px;
+}
+
+footer {
+font-size: 9px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background">
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+</div>
+
+<!-- HEADER -->
+
+<header>
+
+<img
+src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo"
+>
+
+</header>
+
+<!-- MAIN CONTENT -->
+
+<main>
+
+<section class="hero">
+
+<h1>TS VAULT</h1>
+
+<div class="tagline">
+Secure The Digital Frontier
+</div>
+
+<p class="description">
+A digital space built around technology, security,
+creativity and modern solutions. Enter the Vault and
+explore what lies beyond the front door.
+</p>
+
+<!-- ONLY TWO REDIRECTIONS -->
+
+<div class="buttons">
+
+<a
+href="vault.html"
+class="button vault-button"
+>
+ENTER THE VAULT
+</a>
+
+<a
+href="about.tsvault.html"
+class="button about-button"
+>
+ABOUT TS VAULT
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 TS VAULT — SECURE THE DIGITAL FRONTIER
+
+</footer>
+
+</body>
+</html>

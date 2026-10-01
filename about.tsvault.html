@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About TS Vault</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+background: #050a12;
+color: white;
+overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background:
+radial-gradient(
+circle at 50% 10%,
+rgba(0, 140, 255, 0.18),
+transparent 35%
+),
+radial-gradient(
+circle at 10% 90%,
+rgba(0, 90, 180, 0.10),
+transparent 30%
+);
+pointer-events: none;
+z-index: -1;
+}
+
+/* HEADER */
+
+header {
+width: 100%;
+height: 90px;
+padding: 0 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+width: 145px;
+height: auto;
+filter: drop-shadow(0 0 12px rgba(0, 140, 255, 0.35));
+}
+
+.back-home {
+text-decoration: none;
+color: #dcecff;
+border: 1px solid rgba(0, 153, 255, 0.45);
+padding: 10px 17px;
+border-radius: 7px;
+font-size: 13px;
+letter-spacing: 1px;
+transition: 0.3s ease;
+}
+
+.back-home:hover {
+color: white;
+border-color: #0099ff;
+background: rgba(0, 140, 255, 0.10);
+box-shadow: 0 0 18px rgba(0, 140, 255, 0.25);
+}
+
+/* MAIN */
+
+main {
+width: 90%;
+max-width: 1050px;
+margin: auto;
+padding: 55px 0 70px;
+}
+
+/* HERO */
+
+.hero {
+text-align: center;
+margin-bottom: 50px;
+animation: fadeUp 0.8s ease;
+}
+
+.hero h1 {
+font-size: clamp(42px, 7vw, 72px);
+letter-spacing: 3px;
+margin-bottom: 18px;
+
+background: linear-gradient(
+90deg,
+#ffffff,
+#9edcff,
+#ffffff
+);
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.hero p {
+max-width: 720px;
+margin: auto;
+color: #9aaabd;
+line-height: 1.8;
+font-size: 16px;
+}
+
+/* CARDS */
+
+.cards {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 24px;
+}
+
+.card {
+padding: 30px;
+border-radius: 15px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.055),
+rgba(0,90,160,0.035)
+);
+
+border: 1px solid rgba(150, 200, 255, 0.13);
+
+backdrop-filter: blur(12px);
+
+transition: 0.35s ease;
+}
+
+.card:hover {
+transform: translateY(-5px);
+border-color: rgba(0, 153, 255, 0.5);
+box-shadow:
+0 15px 40px rgba(0,0,0,0.35),
+0 0 25px rgba(0,140,255,0.10);
+}
+
+.card h2 {
+font-size: 21px;
+letter-spacing: 1px;
+margin-bottom: 15px;
+}
+
+.card h2::before {
+content: "";
+display: inline-block;
+width: 4px;
+height: 20px;
+margin-right: 9px;
+vertical-align: -3px;
+background: #0099ff;
+border-radius: 4px;
+box-shadow: 0 0 10px rgba(0,153,255,0.7);
+}
+
+.card p {
+color: #9eafbf;
+font-size: 14px;
+line-height: 1.8;
+}
+
+/* FOUNDER */
+
+.founder {
+grid-column: span 2;
+text-align: center;
+}
+
+.founder-name {
+color: #55baff;
+font-size: 15px;
+letter-spacing: 3px;
+margin-bottom: 12px;
+}
+
+/* CTA */
+
+.cta {
+text-align: center;
+margin-top: 55px;
+padding-top: 40px;
+border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.cta h2 {
+font-size: 27px;
+margin-bottom: 10px;
+}
+
+.cta p {
+color: #899aaa;
+margin-bottom: 22px;
+}
+
+.vault-button {
+display: inline-block;
+text-decoration: none;
+color: white;
+
+padding: 13px 27px;
+
+border-radius: 8px;
+border: 1px solid #0099ff;
+
+background: rgba(0, 120, 210, 0.12);
+
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 1.4px;
+
+transition: 0.3s ease;
+}
+
+.vault-button:hover {
+transform: translateY(-3px);
+background: rgba(0, 140, 255, 0.20);
+box-shadow: 0 0 25px rgba(0,140,255,0.25);
+}
+
+/* FOOTER */
+
+footer {
+text-align: center;
+padding: 25px;
+color: #566575;
+font-size: 11px;
+letter-spacing: 1px;
+border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+header {
+height: 75px;
+}
+
+.logo {
+width: 120px;
+}
+
+.back-home {
+font-size: 11px;
+padding: 8px 12px;
+}
+
+main {
+padding-top: 40px;
+}
+
+.cards {
+grid-template-columns: 1fr;
+}
+
+.founder {
+grid-column: span 1;
+}
+
+.card {
+padding: 25px;
+}
+
+.hero p {
+font-size: 14px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html">
+<img
+src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo"
+>
+</a>
+
+<a href="index.html" class="back-home">
+BACK HOME
+</a>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<h1>ABOUT TS VAULT</h1>
+
+<p>
+TS Vault is a digital technology brand built around
+security, innovation and modern digital solutions.
+Our goal is to create meaningful digital experiences
+while exploring the possibilities of technology.
+</p>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+
+<h2>THE VISION</h2>
+
+<p>
+TS Vault was created with a vision of bringing
+technology, creativity and digital security together
+under one identity. The journey is about learning,
+building and continuously pushing forward.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>THE MISSION</h2>
+
+<p>
+Our mission is to develop digital solutions that
+combine modern design with practical functionality
+and a strong focus on security.
+</p>
+
+</div>
+
+<div class="card founder">
+
+<div class="founder-name">
+THATO SEILAMASHI
+</div>
+
+<h2>THE FOUNDER</h2>
+
+<p>
+TS Vault was founded by Thato Seilamashi with the
+ambition of building something that extends beyond
+a website. It represents a growing digital vision
+focused on technology, creativity, security and
+continuous development.
+</p>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>STEP INTO THE VAULT</h2>
+
+<p>
+Discover what TS Vault has been built to offer.
+</p>
+
+<a href="index.html" class="vault-button">
+ENTER THE VAULT
+</a>
+
+</section>
+
+</main>
+
+<footer>
+
+© 2026 TS VAULT — SECURE THE DIGITAL FRONTIER
+
+</footer>
+
+</body>
+</html>

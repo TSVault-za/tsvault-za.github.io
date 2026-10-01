@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TS Vault | Vault</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-height: 100vh;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+pointer-events: none;
+opacity: 0.12;
+background-image:
+linear-gradient(rgba(0, 153, 255, 0.25) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 153, 255, 0.25) 1px, transparent 1px);
+background-size: 45px 45px;
+}
+
+.page {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+position: relative;
+z-index: 1;
+}
+
+/* HEADER */
+
+header {
+width: 100%;
+padding: 20px 5%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.logo {
+width: 175px;
+height: auto;
+display: block;
+}
+
+.status {
+display: flex;
+align-items: center;
+gap: 8px;
+color: #69c9ff;
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.status-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: #00aaff;
+box-shadow: 0 0 12px #00aaff;
+}
+
+/* MAIN */
+
+main {
+flex: 1;
+width: 100%;
+max-width: 1050px;
+margin: auto;
+padding: 55px 25px 60px;
+text-align: center;
+}
+
+.vault-label {
+color: #4ebcff;
+font-size: 11px;
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+h1 {
+font-size: clamp(42px, 8vw, 72px);
+letter-spacing: 5px;
+text-transform: uppercase;
+margin-bottom: 18px;
+text-shadow: 0 0 25px rgba(0, 153, 255, 0.35);
+}
+
+.intro {
+max-width: 650px;
+margin: 0 auto 50px;
+color: #aebdce;
+line-height: 1.7;
+font-size: 15px;
+}
+
+/* VAULT NAVIGATION */
+
+.vault-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 22px;
+max-width: 900px;
+margin: auto;
+}
+
+.vault-card {
+min-height: 180px;
+padding: 30px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+text-decoration: none;
+color: white;
+
+background: rgba(5, 17, 31, 0.85);
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 14px;
+
+transition: all 0.3s ease;
+}
+
+.vault-card:hover {
+transform: translateY(-7px);
+border-color: #00aaff;
+background: rgba(7, 27, 48, 0.95);
+box-shadow: 0 10px 35px rgba(0, 136, 255, 0.18);
+}
+
+.icon {
+width: 58px;
+height: 58px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin-bottom: 18px;
+
+color: #5fc6ff;
+font-size: 24px;
+
+background: rgba(0, 130, 255, 0.08);
+border: 1px solid rgba(0, 170, 255, 0.5);
+}
+
+.vault-card h2 {
+font-size: 17px;
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.vault-card p {
+color: #8294a8;
+font-size: 12px;
+line-height: 1.5;
+}
+
+/* EXIT VAULT */
+
+.exit-area {
+margin-top: 45px;
+}
+
+.exit-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+min-width: 190px;
+padding: 14px 28px;
+
+border-radius: 30px;
+border: 1px solid rgba(255, 255, 255, 0.25);
+
+background: rgba(255, 255, 255, 0.04);
+
+color: #cbd7e4;
+text-decoration: none;
+
+font-size: 11px;
+font-weight: bold;
+letter-spacing: 2px;
+text-transform: uppercase;
+
+transition: all 0.3s ease;
+}
+
+.exit-button:hover {
+color: white;
+border-color: white;
+background: rgba(255, 255, 255, 0.1);
+}
+
+/* FOOTER */
+
+footer {
+padding: 20px;
+text-align: center;
+color: #536579;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+header {
+padding: 18px 20px;
+}
+
+.logo {
+width: 145px;
+}
+
+.status {
+font-size: 8px;
+letter-spacing: 1px;
+}
+
+main {
+padding: 40px 20px 50px;
+}
+
+.vault-grid {
+grid-template-columns: 1fr;
+max-width: 500px;
+}
+
+.vault-card {
+min-height: 150px;
+}
+
+h1 {
+letter-spacing: 3px;
+}
+
+.intro {
+font-size: 14px;
+margin-bottom: 35px;
+}
+}
+
+@media (max-width: 420px) {
+
+.status {
+display: none;
+}
+
+.logo {
+width: 140px;
+}
+
+main {
+padding-top: 35px;
+}
+
+.vault-card {
+min-height: 140px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<header>
+
+<!-- Make sure this matches the actual logo filename in your assets folder -->
+<a href="index.html">
+<img src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo">
+</a>
+
+<div class="status">
+<span class="status-dot"></span>
+Vault Access Active
+</div>
+
+</header>
+
+<!-- MAIN VAULT -->
+<main>
+
+<div class="vault-label">
+TS VAULT
+</div>
+
+<h1>
+THE VAULT
+</h1>
+
+<p class="intro">
+Welcome inside TS Vault. Explore our digital security,
+web development and digital solutions through the
+sections below.
+</p>
+
+<!-- NAVIGATION -->
+<div class="vault-grid">
+
+<!-- SERVICES -->
+<a href="services.html" class="vault-card">
+
+<div class="icon">
+⚙
+</div>
+
+<h2>
+Services
+</h2>
+
+<p>
+Explore the digital services and solutions
+provided by TS Vault.
+</p>
+
+</a>
+
+<!-- ABOUT -->
+<a href="about.html" class="vault-card">
+
+<div class="icon">
+◈
+</div>
+
+<h2>
+About
+</h2>
+
+<p>
+Learn more about TS Vault, its vision
+and the person behind the brand.
+</p>
+
+</a>
+
+<!-- CONTACT -->
+<a href="contact.html" class="vault-card">
+
+<div class="icon">
+✉
+</div>
+
+<h2>
+Contact
+</h2>
+
+<p>
+Get in touch with TS Vault for enquiries,
+projects and collaborations.
+</p>
+
+</a>
+
+</div>
+
+<!-- EXIT VAULT -->
+<div class="exit-area">
+
+<a href="index.html" class="exit-button">
+← Exit Vault
+</a>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</div>
+
+</body>
+</html>

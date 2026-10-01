@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Design Pricing | TS Vault</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+min-height: 100vh;
+color: #ffffff;
+background:
+radial-gradient(circle at 20% 20%, rgba(0, 130, 255, 0.15), transparent 30%),
+radial-gradient(circle at 80% 80%, rgba(0, 170, 255, 0.10), transparent 30%),
+linear-gradient(135deg, #03070d, #081525, #02060b);
+position: relative;
+overflow-x: hidden;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(0, 140, 255, 0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 140, 255, 0.05) 1px, transparent 1px);
+background-size: 45px 45px;
+pointer-events: none;
+z-index: -1;
+}
+
+header {
+width: 100%;
+padding: 20px 6%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+}
+
+.logo {
+width: 145px;
+height: auto;
+display: block;
+}
+
+.header-buttons {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+justify-content: flex-end;
+}
+
+.nav-btn {
+text-decoration: none;
+color: #70c7ff;
+border: 1px solid rgba(0, 153, 255, 0.4);
+padding: 9px 15px;
+border-radius: 20px;
+font-size: 13px;
+transition: 0.25s ease;
+background: rgba(3, 12, 23, 0.65);
+}
+
+.nav-btn:hover {
+background: rgba(0, 140, 255, 0.15);
+border-color: #149cff;
+color: #ffffff;
+}
+
+main {
+width: 90%;
+max-width: 1050px;
+margin: 35px auto 60px;
+text-align: center;
+}
+
+.status {
+display: inline-block;
+color: #62c4ff;
+border: 1px solid rgba(0, 153, 255, 0.35);
+background: rgba(0, 110, 200, 0.08);
+padding: 7px 14px;
+border-radius: 20px;
+font-size: 12px;
+letter-spacing: 1px;
+margin-bottom: 18px;
+}
+
+h1 {
+font-size: clamp(30px, 6vw, 52px);
+letter-spacing: 2px;
+margin-bottom: 12px;
+}
+
+.intro {
+max-width: 680px;
+margin: 0 auto 40px;
+color: #aebdcc;
+line-height: 1.7;
+font-size: 15px;
+}
+
+.pricing-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+align-items: stretch;
+}
+
+.pricing-card {
+display: flex;
+flex-direction: column;
+background: rgba(5, 17, 31, 0.88);
+border: 1px solid rgba(0, 153, 255, 0.28);
+border-radius: 15px;
+padding: 28px 20px;
+transition: 0.25s ease;
+}
+
+.pricing-card:hover {
+transform: translateY(-4px);
+border-color: rgba(0, 166, 255, 0.65);
+box-shadow: 0 12px 35px rgba(0, 110, 255, 0.10);
+}
+
+.pricing-card h2 {
+font-size: 21px;
+margin-bottom: 8px;
+}
+
+.package-description {
+color: #8295a7;
+font-size: 13px;
+line-height: 1.5;
+min-height: 42px;
+}
+
+.price {
+font-size: 38px;
+font-weight: bold;
+color: #65c5ff;
+margin: 18px 0 3px;
+}
+
+.payment-type {
+color: #71869a;
+font-size: 12px;
+margin-bottom: 22px;
+}
+
+.features {
+list-style: none;
+text-align: left;
+margin-bottom: 25px;
+flex-grow: 1;
+}
+
+.features li {
+color: #c1ceda;
+font-size: 13px;
+line-height: 1.5;
+padding: 9px 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.features li::before {
+content: "✓";
+color: #36adff;
+font-weight: bold;
+margin-right: 9px;
+}
+
+.action-btn {
+display: inline-block;
+text-decoration: none;
+color: #ffffff;
+background: #087fd1;
+border: 1px solid #149cff;
+padding: 11px 22px;
+border-radius: 25px;
+font-size: 13px;
+font-weight: bold;
+transition: 0.25s ease;
+}
+
+.action-btn:hover {
+background: #149cff;
+transform: translateY(-2px);
+}
+
+/* Maintenance */
+.maintenance-card {
+max-width: 760px;
+margin: 22px auto 0;
+padding: 25px 20px;
+background: rgba(5, 17, 31, 0.9);
+border: 1px solid rgba(0, 153, 255, 0.3);
+border-radius: 15px;
+}
+
+.maintenance-card h2 {
+font-size: 20px;
+margin-bottom: 8px;
+}
+
+.maintenance-price {
+color: #65c5ff;
+font-size: 28px;
+font-weight: bold;
+margin: 8px 0;
+}
+
+.maintenance-card p {
+color: #aebdcc;
+font-size: 13px;
+line-height: 1.6;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.maintenance-note {
+color: #708496 !important;
+margin-top: 8px !important;
+font-size: 12px !important;
+}
+
+.bottom-nav {
+margin-top: 32px;
+display: flex;
+justify-content: center;
+gap: 12px;
+flex-wrap: wrap;
+}
+
+footer {
+text-align: center;
+color: #607487;
+font-size: 12px;
+padding: 20px;
+}
+
+@media (max-width: 850px) {
+
+.pricing-grid {
+grid-template-columns: 1fr;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.pricing-card {
+padding: 28px 22px;
+}
+}
+
+@media (max-width: 700px) {
+
+header {
+padding: 18px 5%;
+align-items: flex-start;
+}
+
+.logo {
+width: 125px;
+}
+
+.header-buttons {
+gap: 7px;
+}
+
+.nav-btn {
+padding: 8px 11px;
+font-size: 11px;
+}
+
+main {
+margin-top: 25px;
+}
+
+.intro {
+font-size: 14px;
+}
+}
+
+@media (max-width: 450px) {
+
+header {
+flex-direction: column;
+align-items: center;
+}
+
+.header-buttons {
+justify-content: center;
+}
+
+h1 {
+font-size: 32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<!-- TS Vault Logo -->
+<a href="vault.html">
+<img
+src="assets/ts-vault-logo.png"
+alt="TS Vault Logo"
+class="logo"
+>
+</a>
+
+<div class="header-buttons">
+<a href="services.html" class="nav-btn">← Services</a>
+<a href="vault.html" class="nav-btn">⌂ Vault</a>
+</div>
+
+</header>
+
+<main>
+
+<div class="status">
+WEB DESIGN & DEVELOPMENT
+</div>
+
+<h1>WEBSITE PRICING</h1>
+
+<p class="intro">
+Professional, responsive websites designed to give your
+business a strong digital presence without unnecessary
+complexity.
+</p>
+
+<div class="pricing-grid">
+
+<!-- Starter -->
+<div class="pricing-card">
+
+<h2>STARTER</h2>
+
+<p class="package-description">
+For individuals and small businesses
+that need a simple online presence.
+</p>
+
+<div class="price">
+R450
+</div>
+
+<div class="payment-type">
+Once-off payment
+</div>
+
+<ul class="features">
+
+<li>Simple professional website</li>
+
+<li>Mobile-friendly design</li>
+
+<li>Basic contact section</li>
+
+<li>WhatsApp, call and email buttons</li>
+
+<li>Social-media links</li>
+
+<li>Basic SEO setup</li>
+
+<li>Website deployment</li>
+
+</ul>
+
+<p class="package-description">
+Maintenance is not available
+for the Starter package.
+</p>
+
+</div>
+
+<!-- Business -->
+<div class="pricing-card">
+
+<h2>BUSINESS</h2>
+
+<p class="package-description">
+For small businesses that need
+a more complete digital presence.
+</p>
+
+<div class="price">
+R800
+</div>
+
+<div class="payment-type">
+Once-off payment
+</div>
+
+<ul class="features">
+
+<li>Multi-page business website</li>
+
+<li>Custom website design</li>
+
+<li>Mobile and desktop responsive</li>
+
+<li>Services or products sections</li>
+
+<li>Contact forms and buttons</li>
+
+<li>Social-media integration</li>
+
+<li>Basic SEO setup</li>
+
+<li>Website deployment</li>
+
+</ul>
+
+<a href="contact.html" class="action-btn">
+Get Started
+</a>
+
+</div>
+
+<!-- Custom -->
+<div class="pricing-card">
+
+<h2>CUSTOM</h2>
+
+<p class="package-description">
+For projects requiring additional
+pages, features or functionality.
+</p>
+
+<div class="price">
+R1,200+
+</div>
+
+<div class="payment-type">
+Once-off · Custom Quote
+</div>
+
+<ul class="features">
+
+<li>Custom website structure</li>
+
+<li>Additional pages</li>
+
+<li>Advanced design requirements</li>
+
+<li>Custom functionality</li>
+
+<li>Business-specific features</li>
+
+<li>Responsive design</li>
+
+<li>Website deployment</li>
+
+</ul>
+
+<a href="contact.html" class="action-btn">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+<!-- Maintenance -->
+<div class="maintenance-card">
+
+<h2>WEBSITE MAINTENANCE</h2>
+
+<div class="maintenance-price">
+R300 / month
+</div>
+
+<p>
+Available for Business and Custom clients who
+want ongoing website support, updates and
+maintenance after their website is launched.
+</p>
+
+<p class="maintenance-note">
+Starter package clients are not eligible
+for the maintenance service.
+</p>
+
+</div>
+
+<!-- Navigation -->
+<div class="bottom-nav">
+
+<a href="services.html" class="nav-btn">
+← Back to Services
+</a>
+
+<a href="vault.html" class="nav-btn">
+⌂ Return to Vault
+</a>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 TS Vault · Secure The Digital Frontier
+</footer>
+
+</body>
+</html>
